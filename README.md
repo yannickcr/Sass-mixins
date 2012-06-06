@@ -21,7 +21,7 @@ Mixins list
 
 ### Arrow
 
-Add an arrow on the side of the targeted element. Inspired by http://cssarrowplease.com by [Simon Højberg][https://twitter.com/shojberg]
+Add an arrow on the side of the targeted element. Inspired by [CSSArrowPlease.com](http://cssarrowplease.com) by [Simon Højberg](https://twitter.com/shojberg)
 
 #### Syntax:
 
@@ -54,7 +54,7 @@ Clear a float container.
 
 ### Image replacement
 
-Hide the textual content of the targeted element (Use the H5BP Image Replacement technique by [Nicolas Gallagher][http://nicolasgallagher.com])
+Hide the textual content of the targeted element (Use the H5BP Image Replacement technique by [Nicolas Gallagher](http://nicolasgallagher.com))
 
 #### Syntax:
 
