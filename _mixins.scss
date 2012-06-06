@@ -58,6 +58,7 @@
 		}
 
 	}
+	
 }
 
 /*
@@ -85,12 +86,3 @@
 	text-shadow: none;
 	color: transparent;
 }
-
-/*
- * !Internet Explorer specific rules
- */
-@mixin ie { .ie & { @content } }
-@mixin ie6 { .ie6 & { @content } }
-@mixin ie7 { .ie7 & { @content } }
-@mixin ie8 { .ie8 & { @content } }
-@mixin ie9 { .ie9 & { @content } }
