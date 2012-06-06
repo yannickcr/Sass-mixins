@@ -14,7 +14,7 @@ Clone the git repo in your SASS/SCSS project. Use @import to make it available i
     git clone http://git@github.com:country/Sass-mixins.git
     
     // scss:
-    @import 'Sass-mixins/mixins';
+    @import 'Sass-mixins/all';
 
 Mixins list
 -------------------------------------------------------------------
