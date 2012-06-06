@@ -1,0 +1,96 @@
+/* ================================
+ * !Mixins
+ * ================================*/
+
+/*
+ * !Arrow
+ */
+@mixin arrow(
+	$position: top,
+	$size: 10px,
+	$color: black,
+	$borderWidth: 0,
+	$borderColor: transparent,
+	$type: outside
+) {
+	position: relative;
+
+	// Revert $position if needed
+	@if $type == outside {
+		@if $position == top { $position: bottom; }
+		@else if $position == bottom { $position: top; }
+		@else if $position == left { $position: right; }
+		@else { $position: right; }
+	}
+
+	$position2: top;
+	@if $position == top or $position == bottom { $position2: left; }
+
+	$before: '';
+	@if $borderWidth > 0 { $before: ', &:before'; }
+
+	&:after#{$before} {
+		border: solid transparent;
+		content: '';
+		height: 0;
+		@if $type == inside and $borderWidth > 0 { margin: -$borderWidth; }
+		pointer-events: none;
+		position: absolute;
+		@if $type == outside { #{$position}: 100%; }
+		@else { #{$position}: 0; }
+		#{$position2}: 50%;
+		width: 0;
+	}
+
+	&:after {
+		border-#{$position}-color: $color;
+		border-width: $size;
+		margin-#{$position2}: -$size;
+	}
+
+	@if $borderWidth > 0 {
+
+		&:before {
+			$outerSize: round($borderWidth * 1.41421356);
+			border-#{$position}-color: $borderColor;
+			border-width: $size + $outerSize;
+			margin-#{$position2}: -($size + $outerSize);
+		}
+
+	}
+}
+
+/*
+ * !Clearfix
+ */
+@mixin clearfix() {
+	zoom: 1;
+
+	&:before, &:after {
+		content: '';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+}
+
+/*
+ * !Image replacement
+ */
+@mixin ir() {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+/*
+ * !Internet Explorer specific rules
+ */
+@mixin ie { .ie & { @content } }
+@mixin ie6 { .ie6 & { @content } }
+@mixin ie7 { .ie7 & { @content } }
+@mixin ie8 { .ie8 & { @content } }
+@mixin ie9 { .ie9 & { @content } }
