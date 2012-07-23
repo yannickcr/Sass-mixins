@@ -20,7 +20,7 @@
 		@if $position == top { $position: bottom; }
 		@else if $position == bottom { $position: top; }
 		@else if $position == left { $position: right; }
-		@else { $position: right; }
+		@else { $position: left; }
 	}
 
 	$position2: top;
