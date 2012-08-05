@@ -30,7 +30,7 @@
 	@if $borderWidth > 0 { $before: ', &:before'; }
 
 	&:after#{$before} {
-		border: solid transparent;
+		border: solid;
 		content: '';
 		height: 0;
 		@if $type == inside and $borderWidth > 0 { margin: -$borderWidth; }
@@ -43,6 +43,7 @@
 	}
 
 	&:after {
+		border-color: rgba($color, 0);
 		border-#{$position}-color: $color;
 		border-width: $size;
 		margin-#{$position2}: -$size;
@@ -52,6 +53,7 @@
 
 		&:before {
 			$outerSize: round($borderWidth * 1.41421356);
+			border-color: rgba($borderColor, 0);
 			border-#{$position}-color: $borderColor;
 			border-width: $size + $outerSize;
 			margin-#{$position2}: -($size + $outerSize);
