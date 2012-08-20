@@ -30,7 +30,7 @@
 	@if $borderWidth > 0 { $before: ', &:before'; }
 
 	&:after#{$before} {
-		border: solid;
+		border: solid transparent;
 		content: '';
 		height: 0;
 		@if $type == inside and $borderWidth > 0 { margin: -$borderWidth; }
